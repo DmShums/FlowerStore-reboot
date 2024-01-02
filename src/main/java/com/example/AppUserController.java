@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.*;
+import java.util.List;
 
 @RestController
-@RequestMapping(path="api/users")
+@RequestMapping(path = "api/users")
 public class AppUserController {
     private AppUserService srvc;
 
@@ -19,12 +19,12 @@ public class AppUserController {
     }
 
     @PostMapping
-    public void addUser(@RequestBody AppUser usr){
+    public void addUser(@RequestBody AppUser usr) {
         srvc.setUser(usr);
     }
     
     @GetMapping
-    public List<AppUser> getUsers(){
+    public List<AppUser> getUsers() {
         return srvc.getUsers();
     }
 
